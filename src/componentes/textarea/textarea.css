@@ -1,0 +1,17 @@
+.inputtweet input {
+  width: 300px;
+  height: 200px;
+  text-align: center;
+}
+
+.inputautor {
+  margin: 10px;
+}
+
+.inputautor input {
+  width: 150px;
+}
+
+.inputautor button {
+  width: 100px;
+}
