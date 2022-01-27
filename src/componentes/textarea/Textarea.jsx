@@ -1,5 +1,6 @@
 import { firestore } from "../../firebase";
 import "./textarea.css";
+import ImgPost from "../../svg/PostButtonOff.svg";
 
 export default function Textarea(props) {
   const handleChange = (e) => {
@@ -25,22 +26,40 @@ export default function Textarea(props) {
   };
 
   return (
-    <div>
-      <form>
-        <div className="inputtweet">
-          <textarea
-            name="tweet"
-            onChange={handleChange}
-            value={props.tweet.tweet}
-            cols="30"
-            rows="10"
-            placeholder="escriba su tweet aqui..."
-          ></textarea>
+    <div className="textareacontainer">
+      {props.user ? (
+        <div>
+          <div className="img-text-container">
+            <img
+              className="textareaImage"
+              src={props.user.photoURL}
+              alt="textareaImage"
+            />
+            <textarea
+              className="inputtweet"
+              name="tweet"
+              onChange={handleChange}
+              value={props.tweet.tweet}
+              cols="30"
+              rows="10"
+              maxlength="200"
+              placeholder="What’s happening?"
+            ></textarea>
+          </div>
+          <div className="counter-textarea-container">
+            <span className="counter-left">0</span>
+            <span className="counter-right"> 200 max.</span>
+          </div>
+          <div className="btn-post-textarea-container">
+            <img
+              src={ImgPost}
+              alt="sendbutton"
+              className="inputautor"
+              onClick={sendTweet}
+            />
+          </div>
         </div>
-        <div className="inputautor">
-          <button onClick={sendTweet}>enviar tweet</button>
-        </div>
-      </form>
+      ) : null}
     </div>
   );
 }

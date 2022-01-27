@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { firestore, loginConGoogle, auth, logout } from "./firebase.js";
-import WelcomePage from "./componentes/home/Home";
+import WelcomePage from "./componentes/welcomepage/WelcomePage";
 import Header from "./componentes/header/Header";
 import Textarea from "./componentes/textarea/Textarea";
 import Feed from "./componentes/feed/Feed";
@@ -50,7 +50,13 @@ export default function App() {
 
   return (
     <div className="App">
-      {/* <WelcomePage user={user} /> */}
+      {/* <WelcomePage
+        user={user}
+        setUser={setUser}
+        tweet={tweet}
+        tweets={tweets}
+        setTweets={setTweets}
+      /> */}
       <Header user={user} />
       <Textarea user={user} tweet={tweet} setTweet={setTweet} tweets={tweets} />
       <Feed

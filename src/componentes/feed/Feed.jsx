@@ -26,6 +26,7 @@ export default function Feed(props) {
     });
     return () => desuscribir();
   }, []);
+  console.log(props.user);
 
   const deleteTweet = (id) => {
     firestore.doc(`tweets/${id}`).delete();
@@ -52,7 +53,6 @@ export default function Feed(props) {
               <p>{tweet.tweet}</p>
               <p className="tweet-autor">por:{tweet.autor} </p>
               <p className="tweet-email">{tweet.email}</p>
-              <p className="tweet-email">{tweet.uid}</p>
             </div>
             {tweet.uid === availableToDeleted ? (
               <span onClick={() => deleteTweet(tweet.id)} className="delete">

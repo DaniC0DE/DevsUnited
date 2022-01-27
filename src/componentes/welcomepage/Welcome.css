@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+@import url("http://fonts.cdnfonts.com/css/silkscreen?styles=93353");
+
+.WelcomeContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: #2e132c;
+  width: 100%;
+  height: 1024px;
+}
+
+.sidecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 720px;
+}
+
+.LogoFlagprincipal {
+  width: 303px;
+  height: 208px;
+}
+
+.TituloWelcomepage {
+  font-family: "Silkscreen", sans-serif;
+  text-align: left;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 250px;
+}
+
+.SubtituloWelcomepage {
+  font-family: "Fira Code", monospace;
+  color: white;
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 38px;
+}
+
+.btn-signin {
+  margin-bottom: 165px;
+}
+
+.footerwelcome {
+  color: #914d8b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fira Code", monospace;
+}
+
+.footerwelcome h5 {
+  margin: 2px;
+}
+
+/* after login welcomepage */
+
+.right-afterlogin-container {
+  /* border: yellow 1px solid; */
+  text-align: left;
+}
+
+.inputwelcomepage {
+  width: 390px;
+  height: 67px;
+  background-color: black;
+  font-family: "Fira Code", monospace;
+  font-size: 24px;
+  padding-left: 30px;
+  border-inline-end-style: none;
+  border-bottom-style: none;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+::placeholder {
+  color: #914d8b;
+}
+
+.colorsboxcontainer {
+  width: 425px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.colorbox {
+  width: 58px;
+  height: 58px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.colorbox:hover {
+  border: white 5px solid;
+}
+
+.colorbox:active {
+  border: white 5px solid;
+}
+
+.redbox {
+  background-color: #f50d5a;
+}
+
+.orangebox {
+  background-color: #ff865c;
+}
+
+.yellowbox {
+  background-color: #ffea5c;
+}
+
+.greenbox {
+  background-color: #00da76;
+}
+
+.bluebox {
+  background-color: #0096ce;
+}
+
+.violetbox {
+  background-color: #800fff;
+  margin-right: 0px !important;
+}
+
+.btn-continue-welcomepage {
+  width: 425px;
+  height: 67px;
+  background-color: #00da76;
+  color: white;
+  font-family: "Silkscreen", sans-serif;
+  font-size: 24px;
+  border-style: none;
+  margin-bottom: 85px;
+  cursor: pointer;
+}
