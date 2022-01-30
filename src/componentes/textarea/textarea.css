@@ -27,6 +27,7 @@
   font-size: 20px;
   padding: 10px;
   background-color: #2f112d;
+  color: #914d8b;
   resize: none;
   border: none;
 }
@@ -48,6 +49,7 @@
 .counter-right {
   color: #f50d5a;
   font-family: "Fira Code", monospace;
+  margin-bottom: 7px;
 }
 
 .btn-post-textarea-container {

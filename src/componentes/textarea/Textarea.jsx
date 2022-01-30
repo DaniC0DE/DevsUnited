@@ -3,12 +3,31 @@ import "./textarea.css";
 import ImgPost from "../../svg/PostButtonOff.svg";
 
 export default function Textarea(props) {
+  let dateNow = new Date();
+  const month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let dateDay = dateNow.getUTCDate();
+  let dateMonth = month[dateNow.getMonth()];
+
   const handleChange = (e) => {
     let newTweet = {
       tweet: e.target.value,
       uid: props.user.uid,
       email: props.user.email,
       autor: props.user.displayName,
+      date: dateDay + " " + dateMonth,
     };
     props.setTweet(newTweet);
   };
@@ -21,13 +40,15 @@ export default function Textarea(props) {
       email: props.user.email,
       likes: 0,
       uid: props.user.uid,
+      date: props.tweet.date,
     };
     firestore.collection("tweets").add(newTweet);
+    // setTweet({ tweet: "", autor: "", uid: "", email: "", date: "" });
   };
 
   return (
     <div className="textareacontainer">
-      {props.user ? (
+      {props.user !== null ? (
         <div>
           <div className="img-text-container">
             <img
@@ -42,7 +63,7 @@ export default function Textarea(props) {
               value={props.tweet.tweet}
               cols="30"
               rows="10"
-              maxlength="200"
+              maxLength="200"
               placeholder="What’s happening?"
             ></textarea>
           </div>

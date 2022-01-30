@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { firestore, auth } from "../../firebase.js";
 import "./feed.css";
-import Heart from "../../svg/heart.svg";
+import WhiteHeart from "../../svg/whiteHeart.svg";
+import Trash from "../../svg/deleteTrash.svg";
 
 export default function Feed(props) {
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function Feed(props) {
             likes: doc.data().likes,
             email: doc.data().email,
             uid: doc.data().uid,
+            date: doc.data().date,
           };
         });
         props.setTweets(tweets);
@@ -45,27 +47,38 @@ export default function Feed(props) {
   };
 
   return (
-    <div>
+    <div className="feed-container">
       {props.tweets.map((tweet) => {
         return (
           <div className="tweetcontainer" key={tweet.id}>
-            <div className="tweet-info">
-              <p>{tweet.tweet}</p>
-              <p className="tweet-autor">por:{tweet.autor} </p>
-              <p className="tweet-email">{tweet.email}</p>
+            <div className="userpic-tweet-like-container">
+              <div className="pic-tweet-div">
+                <img
+                  className="userPic-tweet"
+                  src={props.user.photoURL}
+                  alt="userPic"
+                />
+              </div>
+              <div className="tweet-data-likes">
+                <div className="usernametitle-date-container">
+                  <span> {props.user.displayName} </span>
+                  <div> - {tweet.date}. </div>
+                </div>
+                <div className="tweet-parrafo">{tweet.tweet}</div>
+                <span
+                  onClick={() => handleLikes(tweet.id, tweet.likes)}
+                  className="likes-container"
+                >
+                  <img height="14px" src={WhiteHeart} alt="heartLikes" />
+                  <span>{tweet.likes ? tweet.likes : 0}</span>
+                </span>
+              </div>
             </div>
             {tweet.uid === availableToDeleted ? (
               <span onClick={() => deleteTweet(tweet.id)} className="delete">
-                Borrar
+                <img className="delete-svg" src={Trash} alt="" />
               </span>
             ) : null}
-            <span
-              onClick={() => handleLikes(tweet.id, tweet.likes)}
-              className="likes"
-            >
-              <img height="14px" src={Heart} alt="heartLikes" />
-              <span>{tweet.likes ? tweet.likes : 0}</span>
-            </span>
           </div>
         );
       })}

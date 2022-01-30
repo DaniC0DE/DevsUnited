@@ -14,6 +14,7 @@ export default function App() {
     autor: "",
     uid: "",
     email: "",
+    date: "",
   });
   const [user, setUser] = useState(null);
 
