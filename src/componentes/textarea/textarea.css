@@ -60,6 +60,19 @@
 }
 
 .inputautor {
-  border-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 102px;
+  height: 35px;
+  background-color: #2f112d;
+  color: black;
+  font-family: "Silkscreen", sans-serif;
+  font-size: 18px;
   cursor: pointer;
+}
+
+.inputautor:active {
+  background-color: #00da76;
+  color: white;
 }

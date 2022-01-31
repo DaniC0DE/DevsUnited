@@ -1,4 +1,3 @@
-import { loginConGoogle, logout } from "../../firebase";
 import "./header.css";
 import FlagLogo from "../../svg/flagLogo.svg";
 import DevsLogo from "../../svg/wordsLogo.svg";

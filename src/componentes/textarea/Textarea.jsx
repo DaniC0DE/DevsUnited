@@ -1,6 +1,5 @@
 import { firestore } from "../../firebase";
 import "./textarea.css";
-import ImgPost from "../../svg/PostButtonOff.svg";
 
 export default function Textarea(props) {
   let dateNow = new Date();
@@ -20,6 +19,7 @@ export default function Textarea(props) {
   ];
   let dateDay = dateNow.getUTCDate();
   let dateMonth = month[dateNow.getMonth()];
+  // let unixDate = Date.now()
 
   const handleChange = (e) => {
     let newTweet = {
@@ -28,6 +28,7 @@ export default function Textarea(props) {
       email: props.user.email,
       autor: props.user.displayName,
       date: dateDay + " " + dateMonth,
+      unixDate: Date.now(),
     };
     props.setTweet(newTweet);
   };
@@ -41,9 +42,10 @@ export default function Textarea(props) {
       likes: 0,
       uid: props.user.uid,
       date: props.tweet.date,
+      unixDate: props.tweet.unixDate,
     };
     firestore.collection("tweets").add(newTweet);
-    // setTweet({ tweet: "", autor: "", uid: "", email: "", date: "" });
+    props.setTweet({ ...props.tweet, tweet: "" });
   };
 
   return (
@@ -68,16 +70,13 @@ export default function Textarea(props) {
             ></textarea>
           </div>
           <div className="counter-textarea-container">
-            <span className="counter-left">0</span>
+            <span className="counter-left">{props.tweet.tweet.length}</span>
             <span className="counter-right"> 200 max.</span>
           </div>
           <div className="btn-post-textarea-container">
-            <img
-              src={ImgPost}
-              alt="sendbutton"
-              className="inputautor"
-              onClick={sendTweet}
-            />
+            <div className="inputautor" onClick={sendTweet}>
+              POST
+            </div>
           </div>
         </div>
       ) : null}

@@ -18,7 +18,11 @@ export default function Feed(props) {
             email: doc.data().email,
             uid: doc.data().uid,
             date: doc.data().date,
+            unixDate: doc.data().unixDate,
           };
+        });
+        let tweetsOrdered = tweets.sort((a, b) => {
+          return b.unixDate - a.unixDate;
         });
         props.setTweets(tweets);
       });

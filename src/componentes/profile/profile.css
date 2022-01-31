@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.headercontainer-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
+  height: 58px;
+  background-color: #2e132c;
+}
+
+.header-central-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 605px;
+}
+
+.usernamebackcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.backsvg-profile {
+  width: 16px;
+  margin-right: 22px;
+}
+
+.usernameToBack {
+  font-family: "Silkscreen", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.logout-svg {
+  width: 116px;
+  cursor: pointer;
+}
+
+/* middle section USERPIC USERNAME */
+
+.pic-username-container-profile {
+  background-color: #150714;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 280px;
+}
+
+.picANDusernamelabel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.user-pic-profile {
+  width: 134px;
+  border-radius: 50%;
+  border: 5px solid #ffea5c;
+  margin-bottom: 10px;
+}
+
+.username-profile {
+  background-color: #ffea5c;
+  color: #2e132c;
+  font-size: 30px;
+  font-family: "Silkscreen", sans-serif;
+  border-bottom-left-radius: 5px;
+}
+
+.post-favotires-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-label-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Silkscreen", sans-serif;
+  background-color: #60265b;
+  color: #2e132c;
+  width: 302px;
+  height: 46px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.favorites-label-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Silkscreen", sans-serif;
+  background-color: #150714;
+  color: #60265b;
+  width: 302px;
+  height: 46px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* SECCION FEED  */
+
+.feed-post-fav-container-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2e132c;
+  border-top: #60265b solid 2px;
+  width: 100%;
+}
