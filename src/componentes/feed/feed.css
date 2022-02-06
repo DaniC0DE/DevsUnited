@@ -52,12 +52,39 @@
 
 .usernametitle-date-container span {
   width: 50%;
-  background-color: #ffea5c;
   color: #2e132c;
   font-size: 18px;
   font-family: "Silkscreen", sans-serif;
   border-bottom-left-radius: 5px;
   margin-right: 12px;
+}
+
+#white {
+  background-color: white;
+}
+
+#redbox {
+  background-color: #f50d5a;
+}
+
+#orangebox {
+  background-color: #ff865c;
+}
+
+#yellowbox {
+  background-color: #ffea5c;
+}
+
+#greenbox {
+  background-color: #00da76;
+}
+
+#bluebox {
+  background-color: #0096ce;
+}
+
+#violetbox {
+  background-color: #800fff;
 }
 
 .usernametitle-date-container div {

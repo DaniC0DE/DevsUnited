@@ -79,13 +79,23 @@ export default function Profile(props) {
         {props.user !== null ? (
           <div>
             <div className="picANDusernamelabel-container">
-              <img
-                className="user-pic-profile"
-                src={props.user.photoURL}
-                alt="profilePic"
-              />
+              <div
+                id={props.color ? props.color : "white"}
+                className="user-pic-profile-div"
+              >
+                <img
+                  className="user-pic-profile"
+                  src={props.user.photoURL}
+                  alt="profilePic"
+                />
+              </div>
 
-              <div className="username-profile">{props.user.displayName}</div>
+              <div
+                id={props.color ? props.color : "white"}
+                className="username-profile"
+              >
+                {props.user.displayName}
+              </div>
             </div>
             <div className="post-favotires-container">
               <div className="post-label-profile"> POST </div>
@@ -113,7 +123,9 @@ export default function Profile(props) {
                       </div>
                       <div className="tweet-data-likes">
                         <div className="usernametitle-date-container">
-                          <span> {props.user.displayName} </span>
+                          <span id={props.color ? props.color : "white"}>
+                            {props.username}
+                          </span>
                           <div> - {tweet.date}. </div>
                         </div>
                         <div className="tweet-parrafo">{tweet.tweet}</div>

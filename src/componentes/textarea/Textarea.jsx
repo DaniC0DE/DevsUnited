@@ -19,7 +19,6 @@ export default function Textarea(props) {
   ];
   let dateDay = dateNow.getUTCDate();
   let dateMonth = month[dateNow.getMonth()];
-  // let unixDate = Date.now()
 
   const handleChange = (e) => {
     let newTweet = {
@@ -28,7 +27,10 @@ export default function Textarea(props) {
       email: props.user.email,
       autor: props.user.displayName,
       date: dateDay + " " + dateMonth,
+      // date: timeAgo(Date.now(), "en"),
       unixDate: Date.now(),
+      username: props.username,
+      color: props.color,
     };
     props.setTweet(newTweet);
   };
@@ -43,6 +45,8 @@ export default function Textarea(props) {
       uid: props.user.uid,
       date: props.tweet.date,
       unixDate: props.tweet.unixDate,
+      username: props.username,
+      color: props.color,
     };
     firestore.collection("tweets").add(newTweet);
     props.setTweet({ ...props.tweet, tweet: "" });

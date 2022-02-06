@@ -26,7 +26,7 @@
   font-family: "Silkscreen", sans-serif;
   text-align: left;
   color: white;
-  font-size: 25px;
+  font-size: 50px;
   font-weight: bold;
   margin-top: 250px;
 }
@@ -36,19 +36,26 @@
   color: white;
   font-size: 24px;
   text-align: left;
+  margin-top: 37px;
   margin-bottom: 38px;
 }
 
 .btn-signin {
   margin-bottom: 165px;
+  cursor: pointer;
 }
 
 .footerwelcome {
-  color: #914d8b;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #914d8b;
   font-family: "Fira Code", monospace;
+}
+
+.footerwelcome div {
+  display: flex;
 }
 
 .footerwelcome h5 {
@@ -62,18 +69,27 @@
   text-align: left;
 }
 
+.TituloWelcomepage2 {
+  font-family: "Silkscreen", sans-serif;
+  text-align: left;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 250px;
+}
+
 .inputwelcomepage {
   width: 390px;
   height: 67px;
   background-color: black;
+  color: #914d8b;
   font-family: "Fira Code", monospace;
   font-size: 24px;
   padding-left: 30px;
-  border-inline-end-style: none;
-  border-bottom-style: none;
   margin-right: 30px;
   margin-bottom: 30px;
   margin-top: 30px;
+  border: none;
 }
 
 ::placeholder {
@@ -103,27 +119,27 @@
   border: white 5px solid;
 }
 
-.redbox {
+#redbox {
   background-color: #f50d5a;
 }
 
-.orangebox {
+#orangebox {
   background-color: #ff865c;
 }
 
-.yellowbox {
+#yellowbox {
   background-color: #ffea5c;
 }
 
-.greenbox {
+#greenbox {
   background-color: #00da76;
 }
 
-.bluebox {
+#bluebox {
   background-color: #0096ce;
 }
 
-.violetbox {
+#violetbox {
   background-color: #800fff;
   margin-right: 0px !important;
 }

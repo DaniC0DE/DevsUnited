@@ -4,11 +4,27 @@ import DevsUnitedLogo from "../../svg/devsunitedLogo.svg";
 import GoogleSingIn from "../../svg/googleSingIn.svg";
 import "./Welcome.css";
 
-export default function WelcomePage({ user, setUser, setTweets }) {
+export default function WelcomePage({
+  user,
+  setUser,
+  setTweets,
+  username,
+  setUsername,
+  setColor,
+  color,
+}) {
   return (
     <div className="WelcomeContainer">
       <LeftSide />
-      <RightSide user={user} setUser={setUser} setTweets={setTweets} />
+      <RightSide
+        user={user}
+        setUser={setUser}
+        setTweets={setTweets}
+        username={username}
+        setUsername={setUsername}
+        color={color}
+        setColor={setColor}
+      />
     </div>
   );
 }
@@ -25,7 +41,15 @@ function LeftSide() {
   );
 }
 
-function RightSide({ user, setUser, setTweets }) {
+function RightSide({
+  user,
+  setUser,
+  setTweets,
+  username,
+  setUsername,
+  setColor,
+  color,
+}) {
   useEffect(() => {
     const desuscribir = firestore
       .collection("tweets")
@@ -38,6 +62,8 @@ function RightSide({ user, setUser, setTweets }) {
             likes: doc.data().likes,
             email: doc.data().email,
             uid: doc.data().uid,
+            username: doc.data().username,
+            color: doc.data().color,
           };
         });
         setTweets(tweets);
@@ -49,11 +75,36 @@ function RightSide({ user, setUser, setTweets }) {
     return () => desuscribir();
   }, []);
 
+  const usernameHandler = (e) => {
+    const usernameSelected = e.target.value;
+    setUsername(usernameSelected);
+  };
+
+  const redHandler = (e) => {
+    setColor(e.target.id);
+  };
+
+  const orangeHandler = (e) => {
+    setColor(e.target.id);
+  };
+  const yellowHandler = (e) => {
+    setColor(e.target.id);
+  };
+  const greenHandler = (e) => {
+    setColor(e.target.id);
+  };
+  const blueHandler = (e) => {
+    setColor(e.target.id);
+  };
+  const violetHandler = (e) => {
+    setColor(e.target.id);
+  };
+
   return (
     <div className="sidecontainer">
       {user !== null ? (
         <div className="right-afterlogin-container">
-          <div className="TituloWelcomepage">
+          <div className="TituloWelcomepage2">
             <h1>Welcome</h1>
             <h1 style={{ color: "#F50D5A" }}> {user.displayName}!</h1>
           </div>
@@ -61,32 +112,59 @@ function RightSide({ user, setUser, setTweets }) {
             className="inputwelcomepage"
             type="text"
             placeholder="Type your username"
+            onChange={usernameHandler}
           />
           <h3 className="SubtituloWelcomepage">Select your favorite color</h3>
           <div className="colorsboxcontainer">
-            <button className=" colorbox redbox"></button>
-            <button className="colorbox orangebox"></button>
-            <button className="colorbox yellowbox"></button>
-            <button className="colorbox greenbox"></button>
-            <button className="colorbox bluebox"></button>
-            <button className="colorbox violetbox"></button>
+            <button
+              id="redbox"
+              className="colorbox"
+              onClick={redHandler}
+            ></button>
+            <button
+              id="orangebox"
+              className="colorbox"
+              onClick={orangeHandler}
+            ></button>
+            <button
+              id="yellowbox"
+              className="colorbox"
+              onClick={yellowHandler}
+            ></button>
+            <button
+              id="greenbox"
+              className="colorbox"
+              onClick={greenHandler}
+            ></button>
+            <button
+              id="bluebox"
+              className="colorbox"
+              onClick={blueHandler}
+            ></button>
+            <button
+              id="violetbox"
+              className="colorbox"
+              onClick={violetHandler}
+            ></button>
           </div>
           <button className="btn-continue-welcomepage">Continue</button>
           <br />
           <button onClick={logout}> Log out </button>
           <div className="footerwelcome">
-            <h5>© 2020 Devs_United - </h5>
-            <h5 style={{ color: "#F50D5A" }}> BETA </h5>
+            <div>
+              <h5>© 2020 Devs_United - </h5>
+              <h5 style={{ color: "#F50D5A" }}> BETA </h5>
+            </div>
+            <h5>by Daniel Alvarado </h5>
           </div>
         </div>
       ) : (
         <div>
           <div className="textoiniciowelcome">
-            <h1 className="TituloWelcomepage">
-              LOREM <br /> IPSUM DOLOR
-            </h1>
+            <h1 className="TituloWelcomepage">LET'S GO !!!</h1>
             <h3 className="SubtituloWelcomepage">
-              Lorem ipsum dolor sit amet, <br /> consectetur adipiscing elit
+              Keep in touch with other Devs! <br /> <br />
+              JOIN to DevsUnited
             </h3>
           </div>
           <img
@@ -96,8 +174,11 @@ function RightSide({ user, setUser, setTweets }) {
             className="btn-signin"
           />
           <div className="footerwelcome">
-            <h5>© 2020 Devs_United - </h5>
-            <h5 style={{ color: "#F50D5A" }}> BETA </h5>
+            <div>
+              <h5>© 2020 Devs_United - </h5>
+              <h5 style={{ color: "#F50D5A" }}> BETA </h5>
+            </div>
+            <h5>by Daniel Alvarado </h5>
           </div>
         </div>
       )}

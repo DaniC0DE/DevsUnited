@@ -14,9 +14,40 @@
 }
 
 .userProfile {
-  width: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  border: 2px white solid;
+}
+
+#white {
+  background-color: white;
+}
+
+#redbox {
+  background-color: #f50d5a;
+}
+
+#orangebox {
+  background-color: #ff865c;
+}
+
+#yellowbox {
+  background-color: #ffea5c;
+}
+
+#greenbox {
+  background-color: #00da76;
+}
+
+#bluebox {
+  background-color: #0096ce;
+}
+
+#violetbox {
+  background-color: #800fff;
 }
 
 .userProfilePic {

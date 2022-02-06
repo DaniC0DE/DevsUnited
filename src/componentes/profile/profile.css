@@ -60,20 +60,51 @@
   align-items: center;
   margin-bottom: 35px;
 }
-
+.user-pic-profile-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 142px;
+  height: 142px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
 .user-pic-profile {
   width: 134px;
   border-radius: 50%;
-  border: 5px solid #ffea5c;
-  margin-bottom: 10px;
 }
 
 .username-profile {
-  background-color: #ffea5c;
   color: #2e132c;
   font-size: 30px;
   font-family: "Silkscreen", sans-serif;
   border-bottom-left-radius: 5px;
+}
+#white {
+  background-color: white;
+}
+#redbox {
+  background-color: #f50d5a;
+}
+
+#orangebox {
+  background-color: #ff865c;
+}
+
+#yellowbox {
+  background-color: #ffea5c;
+}
+
+#greenbox {
+  background-color: #00da76;
+}
+
+#bluebox {
+  background-color: #0096ce;
+}
+
+#violetbox {
+  background-color: #800fff;
 }
 
 .post-favotires-container {

@@ -5,7 +5,6 @@ import Header from "./componentes/header/Header";
 import Textarea from "./componentes/textarea/Textarea";
 import Feed from "./componentes/feed/Feed";
 import Profile from "./componentes/profile/Profile";
-import Heart from "./svg/heart.svg";
 import "./App.css";
 
 export default function App() {
@@ -19,26 +18,41 @@ export default function App() {
   });
   const [user, setUser] = useState(null);
   const [post, setPost] = useState(true);
+  const [username, setUsername] = useState("");
+  const [color, setColor] = useState("");
 
   return (
     <div className="App">
-      {/* <WelcomePage
+      <WelcomePage
         user={user}
         setUser={setUser}
         tweet={tweet}
         tweets={tweets}
         setTweets={setTweets}
-      /> */}
-      <Header user={user} />
-      <Textarea user={user} tweet={tweet} setTweet={setTweet} tweets={tweets} />
+        username={username}
+        setUsername={setUsername}
+        color={color}
+        setColor={setColor}
+      />
+      <Header user={user} color={color} />
+      <Textarea
+        user={user}
+        tweet={tweet}
+        setTweet={setTweet}
+        tweets={tweets}
+        username={username}
+        color={color}
+      />
       <Feed
         user={user}
         setUser={setUser}
         setTweets={setTweets}
         tweets={tweets}
         tweet={tweet}
+        username={username}
+        color={color}
       />
-      {/* <Profile
+      <Profile
         user={user}
         setUser={setUser}
         setTweets={setTweets}
@@ -46,7 +60,9 @@ export default function App() {
         tweet={tweet}
         post={post}
         setPost={setPost}
-      /> */}
+        username={username}
+        color={color}
+      />
     </div>
   );
 }

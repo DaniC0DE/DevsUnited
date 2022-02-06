@@ -7,7 +7,7 @@ export default function Header(props) {
     <div className="headercontainer">
       {props.user ? (
         <div className="header-central-container">
-          <div className="userProfile">
+          <div id={props.color ? props.color : "white"} className="userProfile">
             <img
               className="userProfilePic"
               src={props.user.photoURL}
